@@ -1,16 +1,18 @@
 .single-block {
-  background-color: #dadada;
+  background-color: #fff;
   border-right: 1px solid #000;
+  cursor: pointer;
 
   display: flex;
   align-items: center;
   justify-content: center;
+
 
   &:last-child {
     border-right: 0;
   }
 
   &_alive {
-    background-color: #fff;
+    background-color: #aaa;
   }
 }

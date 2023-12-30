@@ -1,24 +1,24 @@
 import { FC } from "react";
 
-import { SingleBlock } from "../SingleBlock";
+import { SingleCell } from "../SingleCell";
 
 import "./styles.scss";
 
 type Props = {
-  /** Живые клетки в этом ряду */
-  aliveCellsInRow: boolean[];
+  /** Индекс строки */
+  rowIndex: number;
   /** Количество ячеек на игровой доске */
   size: number;
 };
 
-export const Row: FC<Props> = ({ aliveCellsInRow, size }) => {
+export const Row: FC<Props> = ({ rowIndex, size }) => {
   return (
     <div className="row">
       {Array(size)
         .fill(0)
         .map((item, index) => (
-          <SingleBlock
-            isAlive={aliveCellsInRow[index]}
+          <SingleCell
+            cellIndices={{ row: rowIndex, column: index }}
             key={index}
             size={size}
           />

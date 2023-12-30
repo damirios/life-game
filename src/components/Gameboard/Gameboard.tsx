@@ -14,11 +14,13 @@ type Props = {
 export const Gameboard: FC<Props> = ({ aliveCells, size }) => {
   return (
     <div className="gameboard">
-      {Array(size)
-        .fill(0)
-        .map((item, index) => (
-          <Row aliveCellsInRow={aliveCells[index]} key={index} size={size} />
-        ))}
+      <div className="gameboard__content">
+        {Array(size)
+          .fill(0)
+          .map((item, index) => (
+            <Row key={index} rowIndex={index} size={size} />
+          ))}
+      </div>
     </div>
   );
 };
